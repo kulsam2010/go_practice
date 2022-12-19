@@ -12,7 +12,10 @@ func Hello(name string, language string) string {
 	if name == "" {
 		name = "World"
 	}
+	return greetingPrefix(name, language)
+}
 
+func greetingPrefix(name string, language string) string {
 	var prefix string
 
 	switch language {
