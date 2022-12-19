@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"go_practice/integers"
+)
 
 const englishHelloPrefix = "Hello, "
 const spanishHelloPrefix = "Hola, "
@@ -15,8 +18,7 @@ func Hello(name string, language string) string {
 	return greetingPrefix(name, language)
 }
 
-func greetingPrefix(name string, language string) string {
-	var prefix string
+func greetingPrefix(name string, language string) (prefix string) {
 
 	switch language {
 	case spanish:
@@ -31,4 +33,5 @@ func greetingPrefix(name string, language string) string {
 
 func main() {
 	fmt.Println(Hello("Sameer", ""))
+	fmt.Println(integers.Add(5, 6))
 }
