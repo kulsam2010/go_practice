@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go_practice/integers"
+	"go_practice/pkg/integers"
 )
 
 const englishHelloPrefix = "Hello, "
