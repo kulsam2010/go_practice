@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
-	"go_practice/pkg/integers"
+	"log"
+	"net/http"
 )
 
 const englishHelloPrefix = "Hello, "
@@ -31,7 +31,12 @@ func greetingPrefix(name string, language string) (prefix string) {
 	return prefix + name
 }
 
+func MyGreetingHandler(w http.ResponseWriter, r *http.Request) {
+	Greet("world", w)
+}
+
 func main() {
-	fmt.Println(Hello("Sameer", ""))
-	fmt.Println(integers.Add(5, 6))
+	// fmt.Println(Hello("Sameer", ""))
+	// fmt.Println(integers.Add(5, 6))
+	log.Fatal(http.ListenAndServe(":5001", http.HandlerFunc(MyGreetingHandler)))
 }
